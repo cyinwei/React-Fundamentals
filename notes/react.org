@@ -1,0 +1,53 @@
+* What's good about React?
+** Declarative
+*** Imperative vs Declarative Code
+Imperative coding tells the computer *how* to code.  Declarative coding tells the computer *what* to code.
+
+#+NAME: imperative vs declarative coding of summing an array.
+#+BEGIN_SRC js
+  // Imperative
+  var numbers = [4, 2, 3, 6];
+  var total = 0;
+  for (var i=0; i<numbers.length; i++) {
+      total += numbers[i];
+  }
+
+  // Declarative
+  var numbers = [4, 2, 3, 6];
+  numbers.reduce(function(previous, current) {
+      return previous + current;
+  });
+#+END_SRC
+
+Following the example above, in the imperative example
+
+*** Benefits of declarative code
+
+**** Reduces side effects
+
+In the example, the imperative implementation has a local state named =total=.  Notice how there isn't any =total= variable in the =reduce= API.  There actually is a state with the =.reduce= callback, but it's not exposed.  There isn't any easy for you, or some other function to modify that state.  So with declarative coding, you tend to touch side effects less.
+
+**** Minimizes mutability
+
+**** More readable code
+
+**** Less bugs
+
+*** Is React declarative?
+
+Sort of.  Take a look at this example.
+
+From the component perspective, React is declarative.  From underneath the hood, you'll still have to be declarative, particularly with the lifecycle methods in the component.
+
+
+
+** Unidirectional Data Flow
+** Composition
+
+Notice when we write functions, we typically write helper functions that handle part of the process.  For example, in =C++=, we have an entry =main.cpp=, but then write a bunch of inner functions to execute what we want.  That's function composition.  React let's us to the same with component composition.
+
+Imagine you're looking at Twitter's
+
+*** Think in terms of components
+** Explicit Mutations
+** "It's just JavaScript"
