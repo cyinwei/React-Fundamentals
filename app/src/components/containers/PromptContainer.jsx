@@ -17,6 +17,16 @@ class PromptContainer extends React.Component {
     }
   }
 
+  render() {
+    return (
+      <Prompt
+        onSubmitUser={this.handleSubmitUser}
+        onUpdateUser={this.handleUpdateUser}
+        header={this.props.route.header}
+        username={this.state.username} />
+    )
+  }
+  
   // use arrow function for 'this' to refer to the class scope, since for ES6, creating a function without arrows creates a new 'this' scope.
   // see: http://stackoverflow.com/questions/32317154/uncaught-typeerror-cannot-read-property-setstate-of-undefined
   handleUpdateUser = (event) => {
@@ -48,19 +58,10 @@ class PromptContainer extends React.Component {
       this.context.router.push('/playerTwo/' + username)
     }
   }
-
-  render() {
-    return (
-      <Prompt
-        onSubmitUser={this.handleSubmitUser}
-        onUpdateUser={this.handleUpdateUser}
-        header={this.props.route.header}
-        username={this.state.username} />
-    )
-  }
 }
 
 // for some reason, contextTypes should be defined here, not inside
+//  If I do contextTypes : { ... } the context becomes undefined
 // missing some JS knowledge
 PromptContainer.contextTypes = {
   router: React.PropTypes.object.isRequired
