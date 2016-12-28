@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ConfirmBattle from '../stateless/ConfirmBattle'
+import Helpers from '../../utils/githubHelpers'
 
 class ConfirmBattleContainer extends Component {
   constructor(props) {
@@ -13,8 +14,17 @@ class ConfirmBattleContainer extends Component {
 
   componentDidMount() {
     let query = this.props.location.query
+    Helpers.getPlayersInfo([query.playerOne, query.playerTwo])
+      .then((players) => {
+        this.setState({
+          isLoading: false,
+          playersInfo: [players[0], players[1]]
+        })
+      }).catch((err) => {
+        console.warn('Error in getPlayersInfo()', err)
+      })
   }
-  
+
   render() {
     return (
       <ConfirmBattle

@@ -26,9 +26,10 @@ class PromptContainer extends React.Component {
         username={this.state.username} />
     )
   }
-  
+
   // use arrow function for 'this' to refer to the class scope, since for ES6, creating a function without arrows creates a new 'this' scope.
   // see: http://stackoverflow.com/questions/32317154/uncaught-typeerror-cannot-read-property-setstate-of-undefined
+  // this is a babel experimental feature : http://stackoverflow.com/questions/31362292/how-to-use-es6-arrow-in-class-methods
   handleUpdateUser = (event) => {
     this.setState({
       username: event.target.value
