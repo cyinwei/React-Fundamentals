@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
-import Styles from '../../styles/base'
+import MainContainer from './MainContainer'
 
 const Prompt = (props) => {
   return (
-    <div className='jumbotron col-sm-6 col-sm-offset-3 text-center' style={Styles.transparentBg}>
+    <MainContainer>
       <h1>{props.header}</h1>
-      <div className='col-sm-12'>
+      <div className='col-sm-8 col-sm-offset-2'>
         <form onSubmit={props.onSubmitUser}>
           <div className='form-group'>
             <input
@@ -23,7 +23,7 @@ const Prompt = (props) => {
           </div>
         </form>
       </div>
-    </div>
+    </MainContainer>
   )
 }
 

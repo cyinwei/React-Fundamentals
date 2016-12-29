@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Styles from '../../styles/base'
+
+import MainContainer from './MainContainer'
 
 const Home = (props) => {
   return (
-    <div className='jumbotron col-sm-12 text-center' style={Styles.transparentBg}>
+    <MainContainer>
       <h1>Github Battle!</h1>
       <p>Some fancy motto</p>
       <Link to='/playerOne'>
@@ -12,7 +13,7 @@ const Home = (props) => {
           Get Started
         </button>
       </Link>
-    </div>
+    </MainContainer>
   )
 }
 
