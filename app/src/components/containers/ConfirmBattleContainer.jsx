@@ -26,7 +26,6 @@ class ConfirmBattleContainer extends Component {
   }
 
   render() {
-    console.log(this)
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
@@ -35,7 +34,8 @@ class ConfirmBattleContainer extends Component {
     )
   }
 
-  handleInitiateBattle() {
+  handleInitiateBattle = () => {
+    console.log(this)
     this.context.router.push({
       pathname: '/results',
       state: {
