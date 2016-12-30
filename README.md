@@ -4,7 +4,7 @@ Hey!  I went through [Tyler McGinnis'](https://twitter.com/tylermcginnis33) [cou
 
 #### Some changes:
 
-- I've used `[create-react-app](https://github.com/facebookincubator/create-react-app)` instead of going through Tyler's webpack configuation.  It's a bit of a cop out, and there's no hot loading, but I love the dev environment of `create-react-app`.
+- I've used [`create-react-app`](https://github.com/facebookincubator/create-react-app) instead of going through Tyler's webpack configuation.  It's a bit of a cop out, and there's no hot loading, but I love the dev environment of `create-react-app`.
 - App is written in ES6.
 
 #### Learning reflections:
